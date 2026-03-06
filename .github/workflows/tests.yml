@@ -36,3 +36,12 @@ jobs:
         with:
           name: pytest-html-report
           path: report.html
+
+      - name: Upload test artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-artifacts
+          path: |
+            report.html
+            screenshots/
